@@ -1,29 +1,101 @@
 import React from "react";
 import "./Form.css";
+import { useState } from "react";
+// import {createUserWithEmailAndPassword} from ".../../utils/firebaee/firebaseutils"
+
+const defaultFormFields = {
+  FullName: "",
+  email: "",
+  phoneNumber: "",
+  address: "",
+  password: "",
+  confirmpassword: "",
+};
 
 const Form = () => {
+  const [formFields, setFormFields] = useState(defaultFormFields);
+  const { FullName, email, phoneNumber, address, password, confirmpassword } =
+    setFormFields;
+
+  const handlesubmit = async (event) => {
+    event.preventDefault();
+
+    if (passowrd != confirmpassword) {
+      alert("your password do not match");
+      return;
+    }
+
+    try {
+
+    } catch () {
+      
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormFields({ ...formFields, [name]: value });
+  };
+
   return (
-    <div className="container">
-      <form className="create">
-        <h1>Create An Account</h1>
-        <p>Please Enter Your Information</p>
-        <input type="text" placeholder="Full Name" name="email" required />
-        <input type="text" placeholder="Email Address" name="email" required />
-        <input type="text" placeholder="Phone number" name="email" required />
-        <input type="text" placeholder="Address" name="email" required />
+    <div className="containering-container">
+      <form onSubmit={() => {}} className="create">
+        <h1 className="acct">Create An Account</h1>
+        <p className="please">Please Enter Your Information</p>
         <input
+          onChange={handleChange}
+          type="text"
+          placeholder="Full Name"
+          name="FullName"
+          className="logindetails"
+          required
+          value={FullName}
+        />
+        <input
+          onChange={handleChange}
+          type="text"
+          placeholder="Email Address"
+          name="email"
+          className="logindetails"
+          required
+          value={email}
+        />
+        <input
+          onChange={handleChange}
+          type="text"
+          placeholder="Phone number"
+          name="phoneNumber"
+          className="logindetails"
+          required
+          value={phoneNumber}
+        />
+        <input
+          onChange={handleChange}
+          type="text"
+          placeholder="Address"
+          name="address"
+          className="logindetails"
+          required
+          value={address}
+        />
+        <input
+          onChange={handleChange}
           className="logindetails"
           type="password"
           placeholder="Password (at least 8 character)"
           name="password"
           required
+          value={password}
         />
         <input
+          onChange={handleChange}
           className="logindetails"
           type="password"
           placeholder="confrim password"
-          name="password"
+          name="confirmpassword"
           required
+          value={confirmpassword}
         />
 
         <div className="tips">
@@ -39,9 +111,12 @@ const Form = () => {
           </ul>
 
           <input type="checkbox" className="checkbox" required />
-          <label for="checkbox">
+          <label className="label" for="checkbox">
             by signing up you agree to our terms{" "}
-            <a href="#">terms & CONDITIONS of use and privacy policy. </a>
+            <a href="#" className="terms">
+              {" "}
+              terms & CONDITIONS of use and privacy policy.{" "}
+            </a>
           </label>
         </div>
 
@@ -90,5 +165,4 @@ const Form = () => {
     </div>
   );
 };
-
 export default Form;

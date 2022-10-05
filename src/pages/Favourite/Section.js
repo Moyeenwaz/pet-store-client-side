@@ -2,7 +2,7 @@ import React from "react";
 import "./Favourite.css";
 import PetCard from "../../components/PetCard";
 import { petDeets } from "../../dummy";
-import TopSelling from "../Home/TopSelling";
+import RecentlyViewed from "../../components/RecentlyViewed";
 
 const Section = () => {
   return (
@@ -32,7 +32,7 @@ const Section = () => {
         {/* </div> */}
       </div>
       <div>
-        <TopSelling />
+        <RecentlyViewed />
       </div>
       );
     </>

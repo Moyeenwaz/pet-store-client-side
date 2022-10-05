@@ -3,6 +3,11 @@ import { Navbar as Nav } from "./Component.styled";
 import { SearchIcon, Cart, User } from "./icons";
 
 const Navbar = () => {
+  // const [ searchField, setSearchField ] = useState( "" );
+  // const onSearchChange = ( event ) = {
+  //   const searchFieldString = event.target.value.toLocaleLowerCase();
+  //   setSearchField( searchFieldString );
+  // };
   return (
     <Nav>
       <div className="left">
