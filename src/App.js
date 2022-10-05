@@ -14,12 +14,20 @@ import "@splidejs/react-splide/css";
 function App() {
   return (
     <>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/">
+          <Route index element={<Home />} />
+          <Route path="shop" element={<Store />} />
+          <Route path="login" element={<Loginn />} />
+          <Route path="signin" element={<Signin />} />
+          {/* <Route path="empty" element={ <Empty /> } /> */}
+          <Route path="favourite" element={<Favourite />} />
+          {/* <Route path="empty" element={ <Store /> } /> */}
+          <Route path="shop" element={<Store />} />
+        </Route>
       </Routes>
-      {/* <Navbar />
-      <EmptySection />
-      <Footer /> */}
+      <Footer />
     </>
   );
 }
